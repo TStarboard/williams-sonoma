@@ -2,6 +2,8 @@ package com.sqa.tw.helpers;
 
 import java.util.*;
 
+import com.sqa.tw.helpers.exceptions.*;
+
 public class AppBasics {
 
 	static Scanner scanner = new Scanner(System.in);
@@ -41,6 +43,32 @@ public class AppBasics {
 		System.out.print(question + " ");
 		String input = scanner.nextLine();
 		int value = Integer.parseInt(input);
+		return value;
+	}
+
+	public static int requestInt(String question, int min, int max, String errorResponse) {
+		String input;
+		int value = 0;
+		boolean isValid = false;
+		while (!isValid) {
+			System.out.print(question + " ");
+			input = scanner.nextLine().trim();
+			try {
+				value = Integer.parseInt(input);
+				if (value < min) {
+					throw new UnderMinRangeException();
+				} else if (value > max) {
+					throw new OverMaxRangeException();
+				}
+				isValid = true;
+			} catch (NumberFormatException e) {
+				System.out.println("You have not entered a valid numeric value (" + input + ")");
+			} catch (UnderMinRangeException e) {
+				System.out.println(errorResponse + " (" + input + ") [UNDER:" + min + "]");
+			} catch (OverMaxRangeException e) {
+				System.out.println(errorResponse + " (" + input + ") [OVER:" + max + "]");
+			}
+		}
 		return value;
 	}
 
