@@ -1,7 +1,7 @@
 # Willams-Sonoma Project
 ## Williams-Sonoma Project Structure
 
-*Default Structure for A Williams-Sonoma Project*
+*Test for item added to cart*
 
 **Java 8**
 
