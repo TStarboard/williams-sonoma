@@ -1,12 +1,14 @@
-# Basic Project
-## Basic Project Structure
+# Willams-Sonoma Project
+## Williams-Sonoma Project Structure
 
-*Default Structure for A Basic Project*
+*Default Structure for A Williams-Sonoma Project*
 
 **Java 8**
 
 * Maven
-* JUnit
+* Selenium WebDriver
+* TestNG
+* Log4j
 
 Java Project for SQA Boot Camp Program. 
 
